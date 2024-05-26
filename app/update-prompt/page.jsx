@@ -66,5 +66,12 @@ const UpdatePost = () => {
     />
   )
 }
+const UpdatePromptPage = () => {
+  return (
+    <Suspense fallback={<div>Loading...</div>}>
+      <UpdatePost />
+    </Suspense>
+  );
+};
 
-export default UpdatePost
+export default UpdatePromptPage;
