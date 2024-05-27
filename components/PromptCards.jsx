@@ -24,7 +24,16 @@ const PromptCards = ({ post, handelTagClick, handelEdit, handelDelete }) => {
     return (
         <div className="prompt_card">
             <div className="flex justify-between items-start gap-5">
-                <div className="cursor-pointer flex-1 flex justify-start items-center gap-3">
+                <div 
+                className="cursor-pointer flex-1 flex justify-start items-center gap-3"
+                onClick={() => {
+                    console.log()
+                    if(session?.user.id == post.creator._id)
+                        router.push('/profile')
+                    else
+                        router.push(`/profile/${post.creator._id}`)
+                }}
+                >
                     <Image
                     src = {post.creator.image}
                     alt = "user image"
